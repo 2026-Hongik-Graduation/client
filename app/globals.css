@@ -1,1 +1,62 @@
 @import 'tailwindcss';
+
+@layer base {
+  body {
+    font-family: var(--font-pretendard), sans-serif;
+  }
+
+  :root {
+    /* ── 텍스트 계층 ── */
+    --text-1: oklch(97% 0.005 240); /* 최고 밝기, 헤드라인 */
+    --text-2: oklch(82% 0.01 240); /* 본문 */
+    --text-3: oklch(62% 0.012 240); /* 보조 설명 */
+    --text-4: oklch(45% 0.01 240); /* 비활성, 힌트 */
+
+    /* ── 배경 ── */
+    --bg-base: oklch(12% 0.015 255); /* 전체 배경 */
+    --bg-card: oklch(16% 0.018 255); /* 카드 배경 */
+    --bg-subtle: oklch(19% 0.016 255); /* 호버, 입력 배경 */
+
+    /* ── 테두리 ── */
+    --border-subtle: oklch(28% 0.02 255); /* 구분선 */
+    --border-default: oklch(35% 0.022 255); /* 카드 테두리, 인풋 */
+
+    /* ── 그린 팔레트 (브랜드 컬러) ── */
+    --green-100: oklch(92% 0.08 155); /* 배경 틴트 */
+    --green-200: oklch(78% 0.14 155); /* 아이콘, 배지 */
+    --green-300: oklch(68% 0.18 155); /* 기본 강조 */
+    --green-400: oklch(58% 0.21 155); /* 호버, 활성 */
+
+    /* ── 그라디언트 ── */
+    --grad-text: linear-gradient(
+      105deg,
+      var(--green-200) 0%,
+      var(--green-100) 55%,
+      oklch(88% 0.07 180) 100%
+    );
+    --grad-glow: radial-gradient(
+      ellipse 60% 40% at 50% 0%,
+      oklch(35% 0.1 155 / 0.25) 0%,
+      transparent 70%
+    );
+    --grad-ai: linear-gradient(
+      135deg,
+      oklch(60% 0.18 280) 0%,
+      var(--green-300) 50%,
+      oklch(72% 0.15 170) 100%
+    );
+
+    /* ── 상태 색상 ── */
+    --warn: oklch(75% 0.18 60); /* 주의/경고 (앰버 계열) */
+
+    /* ── 공통 유틸 ── */
+    --radius-card: 1rem; /* 16px */
+    --radius-btn: 0.625rem; /* 10px */
+    --shadow-card:
+      0 4px 32px oklch(0% 0 0 / 0.35), 0 1px 4px oklch(0% 0 0 / 0.2);
+  }
+}
+
+.app-bg {
+  background: var(--grad-glow);
+}
