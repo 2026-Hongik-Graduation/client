@@ -1,6 +1,10 @@
 @import 'tailwindcss';
 
 @layer base {
+  body {
+    font-family: var(--font-pretendard), sans-serif;
+  }
+
   :root {
     /* ── 텍스트 계층 ── */
     --text-1: oklch(97% 0.005 240); /* 최고 밝기, 헤드라인 */
