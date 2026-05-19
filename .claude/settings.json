@@ -1,0 +1,11 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "command": "pnpm exec prettier --write \"$FILE_PATH\" --ignore-unknown",
+        "description": "파일 저장 후 자동 Prettier 포맷"
+      }
+    ]
+  }
+}
