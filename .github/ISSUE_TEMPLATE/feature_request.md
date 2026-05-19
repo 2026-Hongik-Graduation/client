@@ -1,10 +1,9 @@
 ---
 name: Feature request
 about: Suggest an idea for this project
-title: "[FEAT]"
-labels: "✨ Feature"
+title: '[FEAT]'
+labels: '✨ Feature'
 assignees: kimminna
-
 ---
 
 ### 🛠️ 만들고자 한 기능 설명
