@@ -25,7 +25,7 @@
 6. **PR 메시지 생성**: PULL_REQUEST_TEMPLATE.md 형식에 맞춘 완전한 PR 메시지를 작성합니다
 7. **결과 제공**: 생성된 PR 메시지를 마크다운 코드 블록으로 감싸서 복사 가능한 형태로 제공합니다
 
-## PR 제목 생성 규칙
+## PR TITLE 생성 규칙
 
 PR 제목은 반드시 대문자 대괄호 형태로 시작해야 합니다.
 
@@ -105,7 +105,7 @@ PR 메시지 작성 시 반드시 다음 규칙을 따릅니다:
 ## 실행 단계
 
 1. `/commit` 컨텍스트 확인 (현재 세션에서 생성한 커밋 계획표/변경 요약)
-2. 컨텍스트가 없으면 `git log`로 base 브랜치 이후 커밋 정보 수집 (`git log main..HEAD --oneline`, `git diff main...HEAD --stat`)
+2. 컨텍스트가 없으면 `git log`로 base 브랜치 이후 커밋 정보 수집 (`git log develop..HEAD --oneline`, `git diff develop...HEAD --stat`)
 3. 변경된 파일 목록과 변경 내용 분석
 4. 커밋 메시지에서 PR 제목과 설명 추출
 5. 커밋 타입에 따른 PR 유형 체크박스 설정
