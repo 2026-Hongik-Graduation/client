@@ -9,6 +9,7 @@
 ```
 
 **예시:**
+
 ```
 /issue feat 사용자 로그인 구현
 /issue fix 메인 페이지 레이아웃 깨짐
@@ -43,17 +44,17 @@
 
 ## 이슈 타입 분류
 
-| 타입 | PR 제목 prefix | 설명 | 사용 템플릿 |
-|------|---------------|------|------------|
-| `feat` | `[FEAT]` | 새로운 기능 구현 | feature_request |
-| `fix` | `[FIX]` | 버그 수정 | bug_report |
-| `refactor` | `[REFACTOR]` | 코드 리팩토링 | feature_request |
-| `design` | `[DESIGN]` | UI/UX 수정 | feature_request |
-| `docs` | `[DOCS]` | 문서 작업 | feature_request |
-| `test` | `[TEST]` | 테스트 코드 작업 | feature_request |
-| `chore` | `[CHORE]` | 설정/빌드 작업 | feature_request |
-| `ci` | `[CI]` | CI/CD 작업 | feature_request |
-| `perf` | `[PERF]` | 성능 개선 | feature_request |
+| 타입       | PR 제목 prefix | 설명             | 사용 템플릿     |
+| ---------- | -------------- | ---------------- | --------------- |
+| `feat`     | `[FEAT]`       | 새로운 기능 구현 | feature_request |
+| `fix`      | `[FIX]`        | 버그 수정        | bug_report      |
+| `refactor` | `[REFACTOR]`   | 코드 리팩토링    | feature_request |
+| `design`   | `[DESIGN]`     | UI/UX 수정       | feature_request |
+| `docs`     | `[DOCS]`       | 문서 작업        | feature_request |
+| `test`     | `[TEST]`       | 테스트 코드 작업 | feature_request |
+| `chore`    | `[CHORE]`      | 설정/빌드 작업   | feature_request |
+| `ci`       | `[CI]`         | CI/CD 작업       | feature_request |
+| `perf`     | `[PERF]`       | 성능 개선        | feature_request |
 
 ---
 
@@ -114,12 +115,14 @@
 ```
 
 **규칙:**
+
 - `type`: 이슈 타입과 동일 (feat, fix, refactor, design, docs, test, chore, ci, perf)
 - `이슈번호`: 생성된 GitHub 이슈 번호
 - `설명`: 이슈 제목을 영어 소문자 kebab-case로 변환 (한국어는 의미를 영어로 번역)
 - 최대 50자를 넘지 않도록 축약
 
 **예시:**
+
 ```
 feat/5-user-login
 fix/7-main-layout-broken
