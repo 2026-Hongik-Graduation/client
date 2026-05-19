@@ -1,1 +1,1 @@
-export {LogoGlyph} from './LogoGlyph';
+export {LogoGlyph} from './LogoGlyph/LogoGlyph';
