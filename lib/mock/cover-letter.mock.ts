@@ -18,6 +18,7 @@ export const MOCK_COVER_LETTERS: CoverLetter[] = [
     createdAt: '2025-05-10T09:00:00Z',
     updatedAt: '2025-05-18T14:30:00Z',
   },
+
   {
     id: 'cl-2',
     jobPostingId: 'job-2',
