@@ -8,6 +8,20 @@ export const MOCK_JOB_POSTINGS: JobPosting[] = [
     requiredSkills: ['React', 'TypeScript', 'Next.js'],
     preferredSkills: ['GraphQL', 'Storybook'],
     competencies: ['문제 해결', '협업', '자기주도성'],
+
+    questions: [
+      {id: 'q-1', text: '지원 동기를 작성해주세요.', limit: 500},
+      {
+        id: 'q-2',
+        text: '팀 프로젝트에서 갈등을 해결한 경험을 서술하세요.',
+        limit: 700,
+      },
+      {
+        id: 'q-3',
+        text: '입사 후 이루고 싶은 목표를 작성해주세요.',
+        limit: 400,
+      },
+    ],
   },
   {
     id: 'job-2',

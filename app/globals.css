@@ -16,6 +16,8 @@
     --bg-base: oklch(12% 0.015 255); /* 전체 배경 */
     --bg-card: oklch(16% 0.018 255); /* 카드 배경 */
     --bg-subtle: oklch(19% 0.016 255); /* 호버, 입력 배경 */
+    --bg-canvas: oklch(10% 0.012 255); /* 최하단 캔버스 배경 */
+    --bg-elevated: oklch(20% 0.02 255); /* 떠 있는 패널/모달 배경 */
 
     /* ── 테두리 ── */
     --border-subtle: oklch(28% 0.02 255); /* 구분선 */
@@ -48,10 +50,12 @@
 
     /* ── 상태 색상 ── */
     --warn: oklch(75% 0.18 60); /* 주의/경고 (앰버 계열) */
+    --danger: oklch(62% 0.22 25); /* 에러/삭제 강조 */
 
     /* ── 공통 유틸 ── */
     --radius-card: 1rem; /* 16px */
     --radius-btn: 0.625rem; /* 10px */
+    --r-sm: 0.5rem; /* 8px 소형 radius */
     --shadow-card:
       0 4px 32px oklch(0% 0 0 / 0.35), 0 1px 4px oklch(0% 0 0 / 0.2);
   }
@@ -59,4 +63,236 @@
 
 .app-bg {
   background: var(--grad-glow);
+}
+
+@layer utilities {
+  /* ── 레이아웃 ── */
+  .row {
+    display: flex;
+    align-items: center;
+  }
+  .row-between {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .col {
+    display: flex;
+    flex-direction: column;
+  }
+  .grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  /* ── 카드 ── */
+  .card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-default);
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-card);
+    padding: 1.5rem;
+  }
+  .card-glow {
+    box-shadow:
+      var(--shadow-card),
+      0 0 0 1px var(--green-300);
+  }
+
+  /* ── 배지/칩 ── */
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    border-radius: 999px;
+    padding: 0.25rem 0.625rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+  }
+  .chip-sm {
+    padding: 0.125rem 0.5rem;
+    font-size: 0.6875rem;
+  }
+  .chip-green {
+    background: oklch(35% 0.12 155 / 0.25);
+    color: var(--green-200);
+  }
+  .chip-mint {
+    background: oklch(35% 0.1 170 / 0.2);
+    color: oklch(78% 0.12 170);
+  }
+  .chip-outline {
+    background: transparent;
+    border: 1px solid var(--border-default);
+    color: var(--text-3);
+  }
+  .chip-glow {
+    background: oklch(35% 0.12 155 / 0.35);
+    color: var(--green-200);
+    box-shadow: 0 0 8px oklch(35% 0.12 155 / 0.4);
+  }
+
+  /* ── 버튼 ── */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border-radius: var(--radius-btn);
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: opacity 0.15s;
+    cursor: pointer;
+  }
+  .btn-sm {
+    padding: 0.375rem 0.75rem;
+    font-size: 0.8125rem;
+  }
+  .btn-primary {
+    background: var(--green-300);
+    color: oklch(10% 0.01 155);
+  }
+  .btn-primary:hover {
+    background: var(--green-400);
+  }
+  .btn-secondary {
+    background: var(--bg-subtle);
+    color: var(--text-2);
+    border: 1px solid var(--border-default);
+  }
+  .btn-secondary:hover {
+    background: var(--border-subtle);
+  }
+  .btn-ghost {
+    background: transparent;
+    color: var(--text-3);
+  }
+  .btn-ghost:hover {
+    color: var(--text-2);
+    background: var(--bg-subtle);
+  }
+
+  /* ── 타이포그래피 ── */
+  .eyebrow {
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--green-200);
+  }
+  .h-display {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--text-1);
+  }
+  .h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--text-1);
+  }
+  .body {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--text-2);
+  }
+  .caption {
+    font-size: 0.8125rem;
+    color: var(--text-3);
+  }
+  .grad-text {
+    background: var(--grad-text);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* ── 배경 ── */
+  .bg-canvas {
+    background: var(--bg-canvas);
+  }
+  .bg-elevated {
+    background: var(--bg-elevated);
+  }
+
+  /* ── 에디터 문서 영역 ── */
+  .doc-paper {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-card);
+    padding: 2rem;
+    min-height: 60vh;
+  }
+  .doc-question {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-1);
+    margin-bottom: 1rem;
+  }
+  .doc-paragraph {
+    font-size: 0.9375rem;
+    line-height: 1.8;
+    color: var(--text-2);
+    outline: none;
+  }
+  .doc-suggest {
+    background: oklch(35% 0.12 155 / 0.12);
+    border-left: 2px solid var(--green-300);
+    padding: 0.75rem 1rem;
+    border-radius: 0 var(--r-sm) var(--r-sm) 0;
+    margin-top: 0.75rem;
+  }
+
+  /* ── AI 상태 ── */
+  .ai-thinking {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+  }
+  .ai-thinking span {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--green-200);
+    animation: dot-bounce 1.2s ease-in-out infinite;
+  }
+  .ai-thinking span:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  .ai-thinking span:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+  @keyframes dot-bounce {
+    0%,
+    80%,
+    100% {
+      transform: scale(0.6);
+      opacity: 0.4;
+    }
+    40% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  .dot-pulse {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--green-300);
+    animation: pulse-dot 1.5s ease-in-out infinite;
+  }
+  @keyframes pulse-dot {
+    0%,
+    100% {
+      opacity: 0.3;
+      transform: scale(0.8);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.2);
+    }
+  }
 }
